@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Template_MAUI.Views.MainView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel="clr-namespace:Template_MAUI.ViewModels"
+    Title=""
+    x:DataType="viewModel:MainViewModel">
+    <VerticalStackLayout Padding="20" Spacing="5">
+
+        <Image
+            Aspect="AspectFit"
+            HeightRequest="200"
+            Source="dotnet_bot.png"
+            WidthRequest="200" />
+
+        <Label Padding="10" Text="Suma de dos valores" />
+
+        <Label Text="Ingrese valor de a:" />
+        <Entry Keyboard="Numeric" Text="{Binding A}" />
+
+        <Label Text="Ingrese valor de b:" />
+        <Entry Keyboard="Numeric" Text="{Binding B}" />
+
+        <Label Text="Valor de la suma:" />
+        <Entry IsReadOnly="True" Text="{Binding Suma}" />
+
+        <Button
+            Background="Green"
+            Command="{Binding CalcularCommand}"
+            FontAttributes="Bold"
+            Text="Calcular" 
+            HorizontalOptions="Center"/>
+        <Button
+            Background="Red"
+            Command="{Binding LimpiarCommand}"
+            FontAttributes="Bold"
+            Text="Limpiar" 
+            HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
